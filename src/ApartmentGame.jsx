@@ -350,6 +350,7 @@ export default function ApartmentGame(){
       }
     },TICK_MS);
     return()=>clearInterval(id);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   },[seasIdx,raining,fireworks,paused,hour]);
 
   const openRoom=(fi,ui)=>{setSelCell({fi,ui});setModal("room");};
