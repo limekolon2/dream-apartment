@@ -1,4 +1,5 @@
 import { useState, useEffect, useRef } from "react";
+import QuitButton from "./QuitButton";
 
 const TOTAL_ROWS  = 10;
 const UNITS       = 4;
@@ -598,6 +599,12 @@ export default function ApartmentGame(){
           <button onClick={()=>setModal("letters")} style={{position:"relative",background:unread>0?"#fef9c3":(isNight?"#334155":"#f1f5f9"),border:unread>0?"2px solid #fbbf24":"2px solid transparent",borderRadius:10,padding:"6px 10px",cursor:"pointer",fontSize:18}}>
             💌{unread>0&&<span style={{position:"absolute",top:-6,right:-6,background:"#ef4444",color:"white",borderRadius:"50%",width:18,height:18,fontSize:10,display:"flex",alignItems:"center",justifyContent:"center",fontWeight:700}}>{unread}</span>}
           </button>
+          {/* やめてポータルに戻る。このゲームはセーブしないので、その旨を確認画面で伝える */}
+          <QuitButton
+            note="このゲームは保存されません。次に遊ぶときは、最初からになります。"
+            theme={{panel:"#ffffff",text:"#1e293b",sub:"#64748b",border:"#e2e8f0",accent:"#4f46e5",accentText:"#ffffff",radius:14}}
+            style={{background:isNight?"#334155":"#f1f5f9",color:isNight?"#e2e8f0":"#475569",border:"2px solid transparent",borderRadius:10,padding:"8px 12px",cursor:"pointer",fontSize:12,fontWeight:700,whiteSpace:"nowrap",fontFamily:"inherit"}}
+          />
         </div>
       </div>
 
